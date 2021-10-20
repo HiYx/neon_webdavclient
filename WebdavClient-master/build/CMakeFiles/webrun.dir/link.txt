@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11  -O0 -w -g2 -ggdb  -rdynamic CMakeFiles/webrun.dir/main.cpp.o CMakeFiles/webrun.dir/WebdavClient.cc.o  -o webrun  -L/home/hegaozhi/shortcut_git/Git_repo/neon/WebdavClient-master/include -Wl,-rpath,/home/hegaozhi/shortcut_git/Git_repo/neon/WebdavClient-master/include ../include/libneon.so 
