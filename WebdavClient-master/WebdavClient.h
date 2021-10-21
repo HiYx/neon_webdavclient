@@ -1,6 +1,6 @@
 #ifndef WebdavClient_H
 #define WebdavClient_H
-
+#include <iostream>
 #include <string>
 #include <vector>
 #include "ne_props.h" /* ne_prop_result_set, ne_session */

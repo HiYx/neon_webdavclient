@@ -65,10 +65,28 @@ add_executable(webrun
 main.cpp
 WebdavClient.cc
 WebdavClient.h
+xmler.cpp
+xmler.h
+    tinyxml/tinystr.cpp
+    tinyxml/tinyxml.cpp
+    tinyxml/tinyxmlerror.cpp
+    tinyxml/tinyxmlparser.cpp
 )
 
 target_link_libraries(
   webrun
   MySharedLib
 )
+
+
+add_executable(xlmertest
+testxmler.cpp
+xmler.cpp
+xmler.h
+    tinyxml/tinystr.cpp
+    tinyxml/tinyxml.cpp
+    tinyxml/tinyxmlerror.cpp
+    tinyxml/tinyxmlparser.cpp
+)
+
 

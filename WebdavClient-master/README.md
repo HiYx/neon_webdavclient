@@ -80,14 +80,54 @@ int main(){
   return 0;
 }
 ```
-   
+
 ## Dependencies ##
  + neon
  + c++99
 
-## Copyrigth
-License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.  
-This is free software: you are free to change and redistribute it.  There is NO WARRANTY, to the extent permitted by law.
 
-## Author ##
-Written by Erik Zenker (erikzenker@hotmail.com)
+
+# demo 设计
+
+
+
+1、首先下载update_index.xml文件
+
+2、根据update_index.xml文件下载对应的文件
+
+
+
+xml：
+
+```
+<bigversion>21</bigversion>
+
+<file_element>
+    <name>temp.zip</name>
+    <uuid>0</uuid>
+    <date>20211020</date>
+    <version>1</version>
+    <type>zip</type>
+    <size>0</size>
+    <other>0</other>
+    <another>0</another>
+    <characters>0</characters>
+</file_element>
+```
+
+
+
+
+
+```
+Download update_index successfull!
+version:21
+-----
+Downloading:temp.zip
+Download update_index successfull<<temp.zip>>
+-----
+Downloading:temp2.zip
+Download update_index error!<<temp2.zip>>404 Not Found
+
+```
+
