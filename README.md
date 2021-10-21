@@ -12,7 +12,7 @@ Configuring neon Library:
 
 
 
-./configure --prefix=/usr/local/neon --share_enble??? 具体可以看--help
+./configure --prefix=/usr/local/neon --enable-shared 具体可以看--help
 
 或者启动一些附件
 
