@@ -7,28 +7,30 @@
 
 //http://www2.abiuni.com:81/remote.php/dav/files/admin/
 
-int downloadfile(WebdavClient webdavClient,std::string uri)
+//将const std :: string＆作为参数传递的日子已经过去了吗？
+
+void downloadfile(WebdavClient& webdavClient,const std::string& uri) //使用了引用
 {
-    std::string dir = "update_index.xml";
+    
+     std::string dir = "update_index.xml";
     // 读取xml文件，获得列表
     xmlSpace::Xmler xmler(dir);
     // 打印版本号码
-    std::cout<<"version:"<<xmler.bigversion<<std::endl;
+    std::cout<<"version:"<<xmler.bigversion<<std::endl; 
     // 生成需要下载的文字列表
-    for (std::list<std::string>::iterator iter = xmler.filelist.begin();
+     for (std::list<std::string>::iterator iter = xmler.filelist.begin();
         iter != xmler.filelist.end(); iter++)
         {
     //进行下载
         std::cout<<"-----"<<std::endl;
         std::cout<<"Downloading:"<<*iter<<std::endl;
-          if(webdavClient.get(uri+*iter ,"bigversion"+std::to_string(xmler.bigversion)+*iter)){
+          if(webdavClient.get(uri+*iter ,"bigversion_"+std::to_string(xmler.bigversion)+"_"+*iter)){
             std::cout << "Download update_index successfull<<" <<*iter<< ">>" <<std::endl;
           }
           else {
             std::cout << "Download update_index error!<<" <<*iter<< ">>" << webdavClient.getLastError() << std::endl;
           }
-        }
-
+        } 
 
 }
 
@@ -39,7 +41,7 @@ int main(){
   const std::string host("www2.abiuni.com");
   const std::string user("user");
   const std::string pass("user");
-  const std::string uri("/remote.php/dav/files/admin/update/");
+  const std::string uri("/remote.php/dav/files/admin/update/");//string类变量是string类对象
   const unsigned port = 81;
 
   WebdavClient webdavClient(host, port, user, pass);

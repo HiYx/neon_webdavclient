@@ -174,6 +174,7 @@ bool WebdavClient::put(std::string uri, std::string localSource){
   int fd = open(localSource.c_str(), O_RDONLY); 
   int res = ne_put(mSession, uri.c_str(), fd); 
   if(res!=NE_OK){ 
+    std::cout << "After you delete old file, you can try again!" << std::endl;
     mError = ne_get_error(mSession);
     return false;
   } 
@@ -195,7 +196,7 @@ bool WebdavClient::get(std::string uri, std::string localDestination){
   int res = ne_get(mSession, uri.c_str(), fd); 
   if(res!=NE_OK){ 
     mError = ne_get_error(mSession);
-    std::cout << "After you delete old update_index.xml, you can try again!" << std::endl;
+    
     return false;
   } 
   close(fd);

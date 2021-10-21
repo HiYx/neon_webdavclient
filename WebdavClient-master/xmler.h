@@ -18,6 +18,7 @@ class Xmler
   int bigversion;//文件大版本
   // 把检索到的名字存入string类的列表里面
   std::list<std::string> filelist;
+  ~Xmler();
 };
 };
 

@@ -56,4 +56,10 @@ Xmler::Xmler(std::string& filename)
   delete Document;
 }
 
+Xmler::~Xmler()
+{
+    std::cerr <<  "使用了析构函数" << std::endl;
+}
+
+
 }
